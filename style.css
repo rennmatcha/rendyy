@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe4ec, #fff5f8);
+    color: #5a3944;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.page {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    text-align: center;
+}
+
+.page.active {
+    display: flex;
+    animation: fadeIn 1s ease;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.88);
+    padding: 30px 22px;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(150, 80, 100, 0.15);
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+button {
+    border: none;
+    background: #ff7fa2;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-top: 22px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 100, 140, 0.25);
+    transition: 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.heart {
+    font-size: 55px;
+    animation: heartbeat 1.3s infinite;
+    margin-bottom: 15px;
+}
+
+.photo {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 5px 20px rgba(100, 50, 70, 0.2);
+    margin-bottom: 20px;
+}
+
+.small {
+    font-size: 14px;
+    opacity: 0.75;
+    margin-top: 10px;
+}
+
+.signature {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.confetti {
+    position: fixed;
+    top: -30px;
+    font-size: 20px;
+    animation: fall linear forwards;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.15);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 28px 18px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .photo {
+        width: 160px;
+        height: 160px;
+    }
+}
